@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html class="scroll-smooth select-none" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanisha</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.8.1/dist/cdn.min.js"
+      defer
+    ></script>
+    <style>
+      /* Animation Keyframes */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-in-out forwards;
+      }
+      .animate-fade-up {
+        animation: fade-in 0.5s ease-in-out forwards;
+      }
+      .hidden {
+        display: none;
+      }
+      body::-webkit-scrollbar {
+        background-color: rgb(208, 208, 208);
+        width: 5px;
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: rgb(75, 75, 255);
+        width: 4px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body
+    x-data="{ darkMode: true}"
+    :class="darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'"
+  >
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full flex justify-between items-center p-4 z-50"
+      :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+    >
+      <a href="#" class="font-bold text-3xl">Tanisha.</a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <nav class="nav md:mr-14 z-50">
+        <span
+          class="active-nav"
+          :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+        ></span>
+        <a href="#home" class="hover:text-blue-500 transition-all">Home</a>
+        <a href="#about" class="hover:text-blue-500 transition-all"
+          >Experiance</a
+        >
+        <a href="#skills-projects" class="hover:text-blue-500 transition-all"
+          >Skills</a
+        >
+        <a href="#contact" class="hover:text-blue-500 transition-all"
+          >Contact</a
+        >
+      </nav>
+      <button
+        @click="darkMode = !darkMode"
+        class="w-8 h-8 fixed right-0 top-0 mr-4 mt-5 text-white font-semibold rounded object-cover overflow-hidden transition-all"
+      >
+        <i
+          title="theme"
+          class="text-2xl hover:text-blue-700"
+          :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+        ><i class='bx bxs-bulb'></i></i>
+      </button>
+    </header>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="h-screen flex flex-col items-center justify-center text-center z-20"
+      :class="darkMode ? 'bg-gray-900' : 'bg-white'"
+    >
+    <div
+      class=" w-70 h-70 p-2 rounded-full animate-fade-in  profile-img overflow-hidden animate-fade-in"
+    >
+      <img
+        src="/profile.jpg"
+        alt="Profile Image"
+        class=" w-60 h-60 rounded-full animate-fade-in object-fit "
+      />
+    </div>
+      
+      <h1 class="text-5xl md:text-7xl font-bold animate-fade-in mt-4">
+        Hi, I'm Tanisha Sahu
+      </h1>
+      <p
+        class="intro mt-5 text-xl md:text-2xl"
+        :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+      >
+        <span class="text"></span>
+      </p>
+
+      <!-- Connection Links -->
+      <div
+        class="mt-8 flex space-x-10 items-center justify-center transition-all"
+      >
+        <a
+          href="https://www.linkedin.com/in/tanisha-sahu-a33385253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+          class="flex items-center justify-center"
+        >
+          <i
+            class="bx bxl-linkedin-square text-5xl text-blue-500 hover:text-blue-700"
+          ></i>
+        </a>
+        <a
+          href="https://github.com/tanisha-sahu"
+          target="_blank"
+          class="flex items-center justify-center"
+        >
+          <i
+            class="bx bxl-github text-5xl hover:text-gray-700 text-gray-600"
+          ></i>
+        </a>
+        <a
+          href="mailto:tanishasahu205@gmail.com"
+          class="flex items-center justify-center"
+        >
+          <i
+            class="bx bxs-envelope text-5xl text-red-500 hover:text-red-600"
+          ></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+
+    <section
+      class="h-full py-20 px-5 z-20"
+      :class="darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'"
+      id="about"
+    >
+      <div class="container mx-auto flex flex-col justify-center items-center">
+        <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-7 mb-7"
+        >
+          <!-- Introduction Div -->
+          <div
+            class="shadow-lg rounded-lg p-6 transition-all duration-300"
+            :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+          >
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500">
+              Introduction
+            </h3>
+            <p>
+              Hi! I'm Tanisha, a passionate software developer with a love for
+              creating impactful applications. I thrive on challenges and enjoy
+              learning new skills that enhance my coding journey. Let's connect
+              and collaborate!
+            </p>
+          </div>
+          <!-- Eduxation Div -->
+          <div
+            class="shadow-lg rounded-lg p-6 transition-all duration-300"
+            :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+          >
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500">Education</h3>
+            <p>
+              - Bachelor of Technology in Computer <br>
+              &nbsp;&nbsp;&nbsp;Science Rajiv Gandhi University, 2026<br />
+              - Specialized in Software Development<br />
+              - Secondary Education from School of </br>
+              &nbsp;&nbsp;&nbsp;Excellence, Mandsaur
+            </p>
+          </div>
+          <!-- Intrest Div -->
+          <div
+            class="shadow-lg rounded-lg p-6 transition-all duration-300"
+            :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+          >
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500">Interests</h3>
+            <p>
+              - Software development<br />
+              - Competitive Programming<br />
+              - Exploring new technologies<br />
+              - Hiking and outdoor adventures<br />
+            </p>
+          </div>
+        </div>
+        <a
+          href="TanishaResume.pdf"
+          class="transition-all mt-8 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 animate-fade-up delay-200 cursor-pointer"
+          download
+        >
+          Download Resume
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills & Projects Section -->
+    <section
+      id="skills-projects"
+      class="min-h-screen py-20 px-5 z-20"
+      :class="darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'"
+    >
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold animate-fade-up">Skills & Projects</h2>
+
+        <!-- Skills Section -->
+        <div
+          class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          x-data="{ showMoreSkills: false }"
+        >
+          <div
+            class="p-6 rounded-lg shadow-lg"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <h3 class="text-2xl font-semibold">Data Structure</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+              Proficiency: Advanced
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-lg shadow-lg"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <h3 class="text-2xl font-semibold">Express</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+              Proficiency: Advanced
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-lg shadow-lg"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <h3 class="text-2xl font-semibold">JavaScript</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+              Proficiency: Advanced
+            </p>
+          </div>
+
+          <!-- More Skills Hidden by Default -->
+          <div
+            class="p-6 rounded-lg shadow-lg animate-fade-in"
+            x-show="showMoreSkills"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <h3 class="text-2xl font-semibold">React</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+              Proficiency: Intermediate
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-lg shadow-lg animate-fade-in"
+            x-show="showMoreSkills"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <h3 class="text-2xl font-semibold">SQL</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+              Proficiency: Intermediate
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-lg shadow-lg animate-fade-in"
+            x-show="showMoreSkills"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <h3 class="text-2xl font-semibold">MongoDB</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+              Proficiency: Intermediate
+            </p>
+          </div>
+
+          <!-- Show More Skills Button -->
+          <button
+            @click="showMoreSkills = !showMoreSkills"
+            class="mt-1 col-span-full text-blue-500 font-semibold hover:underline"
+          >
+            <span x-text="showMoreSkills ? 'Show Less' : 'Show More'"></span>
+            <i x-show="!showMoreSkills" class="bx bx-chevron-down"></i>
+            <i x-show="showMoreSkills" class="bx bx-chevron-up"></i>
+          </button>
+        </div>
+
+        <!-- Projects Section -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          x-data="{ showMoreProjects: false }"
+        >
+          <div
+            class="p-6 rounded-lg shadow-lg"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <img
+              src="/project1-image.png"
+              alt="Project 1"
+              class="w-full h-40 object-cover rounded-lg"
+            />
+            <h3 class="text-2xl font-semibold mt-4">Connectify - Social Media Web Application</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+            A social media platform designed to connect people and facilitate real-time interaction. Users can create profiles, share posts, connect with friends, and engage with content.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-lg shadow-lg"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <img
+              src="/project2-image.png"
+              alt="Project 2"
+              class="w-full h-40 object-cover rounded-lg"
+            />
+            <h3 class="text-2xl font-semibold mt-4">Portfo - A Portfolio Maker</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+            A customizable portfolio-building web application that allows users to create and showcase their professional portfolios seamlessly. Built with a user-friendly interface and responsive design to cater to both beginners and professionals.
+            </p>
+          </div>
+          <div
+            class="p-6 rounded-lg shadow-lg"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <img
+              src="/project3-image.png"
+              alt="Project 3"
+              class="w-full h-40 object-cover rounded-lg"
+            />
+            <h3 class="text-2xl font-semibold mt-4">Foodie Trends</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+            A web application where users can explore recipes for a variety of foods and discover trending dishes. It provides detailed step-by-step instructions, ingredients, and a restaurant finder to locate popular dining spots nearby.
+            </p>
+          </div>
+
+          <!-- More Projects Hidden by Default -->
+          <div
+            class="p-6 rounded-lg shadow-lg animate-fade-in"
+            x-show="showMoreProjects"
+            :class="darkMode ? 'bg-gray-800' : 'bg-gray-200'"
+          >
+            <img
+              src="/project4-image.png"
+              alt="Project 4"
+              class="w-full h-40 object-cover rounded-lg"
+            />
+            <h3 class="text-2xl font-semibold mt-4">Airbnb Clone</h3>
+            <p
+              class="mt-2"
+              :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+            >
+            A backend server for an Airbnb-like platform, enabling property management, user bookings, and search functionalities. The server handles data storage, routing, and API endpoints to support property listings and user interactions.
+            </p>
+          </div>
+          
+          <!-- Show More Projects Button -->
+          <button
+            @click="showMoreProjects = !showMoreProjects"
+            class="mt-1 col-span-full text-blue-500 font-semibold hover:underline"
+          >
+            <span x-text="showMoreProjects ? 'Show Less' : 'Show More'"></span>
+            <i x-show="!showMoreProjects" class="bx bx-chevron-down"></i>
+            <i x-show="showMoreProjects" class="bx bx-chevron-up"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="min-h-screen py-20 px-5 z-20"
+      :class="darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'"
+    >
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold animate-fade-up">Contact Me</h2>
+        <form class="mt-8" onsubmit="sendMail(); return false;">
+          <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            class="block w-full mt-4 px-4 py-3 rounded-lg"
+            :class="darkMode ? 'bg-gray-900 text-gray-600 border-gray-700' : 'bg-gray-200 text-gray-800 border-gray-300'"
+            required
+          />
+          <input
+            id="mail"
+            type="email"
+            placeholder="Your Email"
+            class="block w-full mt-4 px-4 py-3 rounded-lg"
+            :class="darkMode ? 'bg-gray-900 text-gray-500 border-gray-700' : 'bg-gray-200 text-gray-800 border-gray-300'"
+            required
+          />
+          <textarea
+            id="subject"
+            placeholder="Your Message"
+            class="block w-full mt-4 px-4 py-3 rounded-lg resize-none h-40"
+            :class="darkMode ? 'bg-gray-900 text-gray-500 border-gray-700' : 'bg-gray-200 text-gray-800 border-gray-300'"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="mt-6 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer
+      class="fixed bottom-0 w-full shadow-lg z-50 flex justify-center items-center"
+      :class="darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'"
+    >
+      Made with
+      <span 
+      class="text-blue-600 text-xl"
+      >
+        &nbsp;&hearts;&nbsp;
+      </span> 
+      by Tanisha
+    </footer>
+
+    <!-- Loadind page -->
+    <div class="loading-page cursor-none">
+      <span class="load-name">Tanisha</span>
+    </div>
+
+
+  </body>
+
+  <!-- cursor animation  -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Script code start from here   -->
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <script src="script.js"></script>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  <script>
+    function sendMail() {
+      let name = document.getElementById("name").value;
+      let bdy =
+        document.getElementById("mail").value +
+        "<br/><br/>" +
+        document.getElementById("subject").value;
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "visiters2004@gmail.com",
+        Password: "88879B73FD61A3B63466670E6283B72D454C",
+        To: "ritikupadhyay838@gmail.com",
+        From: "ritikupadhyay838@gmail.com",
+        Subject: name,
+        Body: bdy,
+      })
+        .then((message) => alert("Message sent."))
+        .catch((err) => {
+          alert(err);
+        });
+    }
+  </script>
+</html>
